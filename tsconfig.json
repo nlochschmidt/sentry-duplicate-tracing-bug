@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2020",
+    "module": "NodeNext",
+    "outDir": "./build",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+}
