@@ -2,6 +2,8 @@
 
 Attempt to produce a minimal reproducible test case for the duplicate span issue.
 
+see https://github.com/getsentry/sentry-javascript/issues/14065
+
 ### Build and run
 
 ```
