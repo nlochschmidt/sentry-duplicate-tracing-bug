@@ -1,5 +1,3 @@
-
-import './instrument.js'
 import { trace } from '@opentelemetry/api';
 
 import Hapi from '@hapi/hapi';

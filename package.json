@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc -p .",
-    "start": "node --import ./build/hook.js  build/index.js"
+    "start": "node --import ./build/instrument.js build/index.js"
   },
   "devDependencies": {
     "typescript": "5.6.3",

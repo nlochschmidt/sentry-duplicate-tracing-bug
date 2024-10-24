@@ -9,6 +9,7 @@ const sentryClient = Sentry.init({
     debug: true,
     tracesSampleRate: 1.0,
     skipOpenTelemetrySetup: true,
+    integrations: [Sentry.httpIntegration({ spans: false })],
 })
 
 const provider = new NodeTracerProvider({
