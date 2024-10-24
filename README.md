@@ -119,7 +119,7 @@ After a short time we should see two spans (http and hapi) for the single traceI
 
 ### Actual result
 
-However we see a total of three spans and four traces:
+However we see a total of four spans in three traces:
 
 ```
 {
