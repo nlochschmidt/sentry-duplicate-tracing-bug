@@ -1,5 +1,3 @@
-
-import './instrument.js'
 import { trace } from '@opentelemetry/api';
 
 import Hapi from '@hapi/hapi';
@@ -16,6 +14,7 @@ server.route({
     handler: () => {
         const otelSpan = trace.getActiveSpan()?.spanContext();
         const scopeData = getIsolationScope().getScopeData();
+        captureException(new Error('This is a test error'));
         const request = scopeData.sdkProcessingMetadata.request as any
         return JSON.stringify({
             otelSpan,

@@ -1,3 +1,7 @@
+import { register } from "node:module"; 
+import { pathToFileURL } from "node:url"; 
+register("@opentelemetry/instrumentation/hook.mjs", pathToFileURL("./"));
+
 import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node"
 import { registerInstrumentations } from "@opentelemetry/instrumentation"
 import { BatchSpanProcessor, ConsoleSpanExporter, NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
@@ -9,6 +13,12 @@ const sentryClient = Sentry.init({
     debug: true,
     tracesSampleRate: 1.0,
     skipOpenTelemetrySetup: true,
+    registerEsmLoaderHooks: false,
+    integrations: [Sentry.httpIntegration({ spans: false })],
+    beforeSend(event) {
+        console.log(event);
+        return event;
+    },
 })
 
 const provider = new NodeTracerProvider({
