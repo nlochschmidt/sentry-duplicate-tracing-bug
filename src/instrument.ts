@@ -1,4 +1,3 @@
-
 import { getNodeAutoInstrumentations } from "@opentelemetry/auto-instrumentations-node"
 import { registerInstrumentations } from "@opentelemetry/instrumentation"
 import { BatchSpanProcessor, ConsoleSpanExporter, NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
